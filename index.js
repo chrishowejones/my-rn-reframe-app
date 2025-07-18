@@ -1,8 +1,6 @@
-import { registerRootComponent } from 'expo';
+// index.js (in your project root)
+// Import the specifically named and located bundle
+import "expo-dev-client";
+import App from "./app/index";
 
-import App from './App';
-
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
-registerRootComponent(App);
+export default App;
