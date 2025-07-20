@@ -6,10 +6,10 @@
   (re-frame.core/->interceptor
     :id      :log-count
     :before  (fn [context]
-               (println "Count before fx:" (-> context :coeffects :db :count))
+               (println "State before fx:" (-> context :coeffects :db))
                context)
     :after   (fn [context]
-               (println "Count after fx:" (-> context :effects :db :count))
+               (println "State after fx:" (-> context :effects :db))
                context)))
 
 (rf/reg-fx
@@ -34,3 +34,8 @@
   :alert-count
   (fn [{:keys [db]} [_]]
     {:log-effect (str "Current count: " (:count db))}))
+
+(rf/reg-event-fx
+ :update-name
+ (fn [{:keys [db]} [_ text]]
+   {:db (assoc db :name text)}))

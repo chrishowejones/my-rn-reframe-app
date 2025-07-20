@@ -35,16 +35,7 @@
           (rn/StyleSheet.create)))
 
 (defn root-component-fn []
-  [main-screen]
-  #_(let [count @(rf/subscribe [:current-count])]
-      [:> rn/View {:style (.-container styles)}
-       [:> rn/Image {:source splash-img :style {:width 200 :height 200}}]
-       [:> rn/Text "Hello from ClojureScript on Expo! From Chris"]
-       [:> rn/Text (str "Count: " count)]
-       [:> rn/Button {:title "Increment"
-                      :onPress #(rf/dispatch [:increment])}]
-       [:> rn/Button {:title "Decrement"
-                      :onPress #(rf/dispatch [:decrement])}]]))
+  [main-screen])
 
 (defn start
   {:dev/after-load true}
@@ -57,6 +48,7 @@
 
 (comment
 
-  (expo/render-root (r/as-element [root-component-fn]))
+  @re-frame.db/app-db
+
   ;;
 )

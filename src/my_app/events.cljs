@@ -4,4 +4,4 @@
 (rf/reg-event-db
   :initialize-db
   (fn [_ _]
-    {:count 0}))
+    {:count 0 :name "Chris"}))

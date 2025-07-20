@@ -5,3 +5,8 @@
  :current-count
  (fn [db _]
    (:count db)))
+
+(rf/reg-sub
+ :name
+ (fn [db _]
+   (:name db)))
