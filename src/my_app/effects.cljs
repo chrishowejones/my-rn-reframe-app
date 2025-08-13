@@ -33,7 +33,7 @@
 (rf/reg-event-fx
   :alert-count
   (fn [{:keys [db]} [_]]
-    {:log-effect (str "Current count: " (:count db))}))
+    {:log-effect (str "Current state: " db)}))
 
 (rf/reg-event-fx
  :update-name
